@@ -55,14 +55,15 @@ from sklearn.metrics import r2_score
 opj = os.path.join
 
 def load_llm(base_model_path, finetune_model_path):
-
-    tokenizer = LlamaTokenizer.from_pretrained(base_model_path)
+    print("check - 1")
+    tokenizer = LlamaTokenizer.from_pretrained(base_model_path, use_auth_token=True)
     print("Loaded tokenizer")
     
     model = LlamaForCausalLM.from_pretrained(
         base_model_path,
         load_in_8bit=True,
         device_map="auto",
+        use_auth_token=True
     )
     print("Loaded base model")
 
