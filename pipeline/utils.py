@@ -55,7 +55,7 @@ from sklearn.metrics import r2_score
 opj = os.path.join
 
 def load_llm(base_model_path, finetune_model_path):
-    print("check - 1")
+    print("check - 2")
     tokenizer = LlamaTokenizer.from_pretrained(base_model_path, use_auth_token=True, token = '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')
     print("Loaded tokenizer")
     
