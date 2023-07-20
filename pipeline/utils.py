@@ -56,14 +56,15 @@ opj = os.path.join
 
 def load_llm(base_model_path, finetune_model_path):
     print("check - 1")
-    tokenizer = LlamaTokenizer.from_pretrained(base_model_path, use_auth_token=True)
+    tokenizer = LlamaTokenizer.from_pretrained(base_model_path, use_auth_token=True, token = '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')
     print("Loaded tokenizer")
     
     model = LlamaForCausalLM.from_pretrained(
         base_model_path,
         load_in_8bit=True,
         device_map="auto",
-        use_auth_token=True
+        use_auth_token=True,
+        token = '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'
     )
     print("Loaded base model")
 
